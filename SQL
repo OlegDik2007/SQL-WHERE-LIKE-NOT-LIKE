@@ -1,0 +1,10 @@
+SELECT product_id,
+       name,
+       price,
+       '25%' as discount,
+       round(price -(price * 0.25), 2) as new_price
+FROM   products
+WHERE  price > 60
+   and name like '%чай%'
+   and name not like '%гриб%'
+ORDER BY product_id asc;
